@@ -1,28 +1,29 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 
 class SmallText extends StatelessWidget {
-  Color? color;
+  final Color? color;
   final String text;
-  double size;
-  double height;
-  final TextAlign;
+  final double size;
+  final double height;
+  final TextAlign? textAlign;
+  final int maxLines;
 
-  SmallText({
-    Key? key,
+  const SmallText({
+    super.key,
     this.color,
     required this.text,
     this.size = 12,
     this.height = 1.2,
-    this.TextAlign,
-    required int maxLines,
-  }) : super(key: key);
+    this.textAlign,
+    this.maxLines = 3,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign,
-      maxLines: 3,
+      textAlign: textAlign,
+      maxLines: maxLines,
       style: TextStyle(
         color: color,
         fontSize: size,

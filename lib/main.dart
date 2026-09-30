@@ -1,5 +1,3 @@
-import 'package:career/careers.dart';
-import 'package:career/settings_page/notifiactions.dart';
 import 'package:flutter/material.dart';
 
 import 'settings_page/your_account.dart';
@@ -9,19 +7,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key, this.home = const YourAccountPage()});
 
-  // This widget is the root of your application.
+  final Widget home;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Career',
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      home: YourAccountPage(),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      home: home,
     );
   }
 }
