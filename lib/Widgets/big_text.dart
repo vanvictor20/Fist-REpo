@@ -1,16 +1,16 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 
 class BigText extends StatelessWidget {
   final Color? color;
   final String text;
-  double size;
+  final double size;
 
-  BigText({
-    Key? key,
+  const BigText({
+    super.key,
     this.color,
     required this.text,
     this.size = 22,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class BigText extends StatelessWidget {
       text,
       style: TextStyle(
         color: color,
+        fontSize: size,
         fontWeight: FontWeight.bold,
         fontFamily: 'Roboto',
       ),
